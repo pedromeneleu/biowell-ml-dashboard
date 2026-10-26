@@ -8,7 +8,7 @@ A BIOWELL usa o mesmo servidor Supabase da PCXpress, mas um schema próprio,
 
 1. No SQL Editor do Supabase, rode `00_exportar_estrutura_ml_dashboards.sql`. Ele só lê a
    estrutura do `ml_dashboards` (sem dados) e devolve tudo numa célula (`ddl`).
-2. Salve o conteúdo da célula (ou o CSV baixado do resultado) num arquivo e gere o script:
+2. Salve o resultado (texto da célula, JSON copiado ou CSV baixado) num arquivo e gere o script:
 
    ```bash
    python3 supabase/biowell/gerar_schema_biowell.py exportacao.sql supabase/biowell/01_criar_schema_ml_dashboards_biowell.sql

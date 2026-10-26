@@ -5,6 +5,7 @@ A exportação é o conteúdo da coluna "ddl" de exportar-estrutura-ml_dashboard
 """
 import csv
 import io
+import json
 import re
 import sys
 
@@ -12,8 +13,10 @@ ORIGEM = "ml_dashboards"
 DESTINO = "ml_dashboards_biowell"
 
 exportacao = open(sys.argv[1], encoding="utf-8-sig").read()
-# Aceita também o CSV baixado do SQL Editor (colunas objetos,ddl).
-if exportacao.lstrip().startswith("objetos,"):
+# Aceita também o JSON copiado do resultado e o CSV baixado do SQL Editor.
+if exportacao.lstrip().startswith("["):
+    exportacao = json.loads(exportacao)[0]["ddl"]
+elif exportacao.lstrip().startswith("objetos,"):
     linhas = list(csv.DictReader(io.StringIO(exportacao)))
     exportacao = linhas[0]["ddl"]
 if f"{ORIGEM}." not in exportacao:
