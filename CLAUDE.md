@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-PCXpress Mercado Livre Analytics — a Next.js (App Router) dashboard that reads pre-aggregated
+BIOWELL Mercado Livre Analytics (a copy of the PCXpress dashboard for the client BIOWELL) — a Next.js (App Router) dashboard that reads pre-aggregated
 seller/sales data from Supabase (Postgres) server-side and renders it in a single-page client
 dashboard. The whole product is essentially two files: `lib/supabase-dashboard.ts` (data layer)
 and `app/page.tsx` (the entire UI).
@@ -31,7 +31,7 @@ Local env vars go in `.env.local` (not committed):
 SUPABASE_URL=https://SEU-PROJETO.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=SUA_CHAVE_SERVICE_ROLE
 SUPABASE_SCHEMA=ml_dashboards
-SUPABASE_ACCOUNT_NAME=PC Express
+SUPABASE_ACCOUNT_NAME=BIOWELL
 ```
 
 Without these set, the API route falls back to `FALLBACK_DASHBOARD_DATA` (see below) instead of

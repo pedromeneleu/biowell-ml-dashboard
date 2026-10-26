@@ -1,7 +1,6 @@
   "use client";
   
-  import Image from "next/image";
-  import {
+    import {
     Activity,
     AlertTriangle,
     ArrowDownRight,
@@ -83,7 +82,7 @@
     },
     seller: {
       title: "Saúde da conta",
-      description: "Reputação, reclamações, atrasos e cancelamentos da conta PCXpress.",
+      description: "Reputação, reclamações, atrasos e cancelamentos da conta BIOWELL.",
     },
     returns: {
       title: "Devoluções",
@@ -1793,7 +1792,7 @@
             <div>
               <span className="eyebrow">Visão da operação</span>
               <h2 id="logistics-filter-title">{selectedMode}</h2>
-              <p>Prioridades da PCXpress primeiro; desempenho da cadeia e diagnóstico aparecem em níveis separados.</p>
+              <p>Prioridades da BIOWELL primeiro; desempenho da cadeia e diagnóstico aparecem em níveis separados.</p>
             </div>
             <div className="logistics-command-actions">
               <div className="logistics-mode-tabs" role="group" aria-label="Filtrar modalidade logística">
@@ -1848,7 +1847,7 @@
           <header className="logistics-section-heading">
             <div>
               <span className="eyebrow">Prioridades de hoje</span>
-              <h2 id="logistics-action-title">Ação PCXpress</h2>
+              <h2 id="logistics-action-title">Ação BIOWELL</h2>
               <p>Posição operacional completa dos envios abertos, sem limitar pela data em que o pedido foi vendido.</p>
             </div>
             <span className="logistics-scope-badge">Agora</span>
@@ -1870,7 +1869,7 @@
                     ? "Envios que já ultrapassaram o prazo de despacho e exigem atuação direta da operação."
                     : "Nenhum envio aberto ultrapassou o prazo de despacho nesta sincronização."}
                 </p>
-                <span className="logistics-responsibility-label">Responsabilidade PCXpress</span>
+                <span className="logistics-responsibility-label">Responsabilidade BIOWELL</span>
               </article>
 
               <article className="logistics-priority-card is-waiting">
@@ -1894,7 +1893,7 @@
                 <p>
                   {dispatchApplies
                     ? "A consulta da fila operacional falhou. Os valores não foram convertidos em zero; verifique a fonte de envios."
-                    : "Na modalidade Full, despacho do seller não se aplica à PCXpress. Acompanhe entrega e disponibilidade do estoque abaixo."}
+                    : "Na modalidade Full, despacho do seller não se aplica à BIOWELL. Acompanhe entrega e disponibilidade do estoque abaixo."}
                 </p>
               </div>
             </div>
@@ -1905,7 +1904,7 @@
           <header className="logistics-section-heading">
             <div>
               <span className="eyebrow">Resultado histórico</span>
-              <h2 id="logistics-operation-title">Operação PCXpress</h2>
+              <h2 id="logistics-operation-title">Operação BIOWELL</h2>
               <p>Pedidos vendidos no período selecionado, com base e responsabilidade explicitadas.</p>
             </div>
             <span className="logistics-scope-badge">{data.periodDays} dias</span>
@@ -1995,7 +1994,7 @@
                 <p>
                   {dispatchApplies
                     ? "A consulta de pontualidade falhou; nenhum zero foi exibido como resultado operacional."
-                    : "O Full permanece fora do resultado operacional de expedição da PCXpress."}
+                    : "O Full permanece fora do resultado operacional de expedição da BIOWELL."}
                 </p>
               </div>
             </div>
@@ -2807,7 +2806,7 @@
       <main className="dashboard-shell">
         <aside className={`sidebar ${mobileOpen ? "sidebar-open" : ""}`}>
           <div className="brand-block">
-            <Image src="/pcxpress-logo.webp" alt="PCXpress" width={160} height={67} priority />
+            <strong className="brand-wordmark">BIOWELL</strong>
             <span>Painel Mercado Livre</span>
           </div>
           <nav aria-label="Navegação principal">
@@ -2998,7 +2997,7 @@
   
             <div className="page-title-row">
               <div>
-                <p className="eyebrow">PCXpress | Mercado Livre</p>
+                <p className="eyebrow">BIOWELL | Mercado Livre</p>
                 <h1>{activeMeta.title}</h1>
                 <p>{activeMeta.description}</p>
               </div>

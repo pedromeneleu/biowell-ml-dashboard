@@ -134,7 +134,7 @@ test("renders the account history and calculates cancellations from order-level 
   assert.match(cancellationView, /count\(\*\) filter \(where o\.status in \('cancelled', 'canceled'\)\)/);
 });
 
-test("prioritizes PCXpress actions before the monitored chain and keeps diagnostics collapsed", async () => {
+test("prioritizes BIOWELL actions before the monitored chain and keeps diagnostics collapsed", async () => {
   const [page, styles] = await Promise.all([
     readFile(new URL("app/page.tsx", root), "utf8"),
     readFile(new URL("app/globals.css", root), "utf8"),
@@ -144,7 +144,7 @@ test("prioritizes PCXpress actions before the monitored chain and keeps diagnost
   const logisticsEnd = page.indexOf("function CancellationTrend", logisticsStart);
   const logisticsView = page.slice(logisticsStart, logisticsEnd);
   const prioritiesIndex = logisticsView.indexOf('<span className="eyebrow">Prioridades de hoje</span>');
-  const actionIndex = logisticsView.indexOf('<h2 id="logistics-action-title">Ação PCXpress</h2>');
+  const actionIndex = logisticsView.indexOf('<h2 id="logistics-action-title">Ação BIOWELL</h2>');
   const chainIndex = logisticsView.indexOf('<h2 id="logistics-chain-title">Cadeia monitorada</h2>');
   const diagnosticsIndex = logisticsView.indexOf('<details className="panel logistics-diagnostics">');
   const diagnosticsEnd = logisticsView.indexOf("</details>", diagnosticsIndex);
@@ -195,7 +195,7 @@ test("separates logistics modalities, punctuality, backlog and reconciliation", 
   assert.match(types, /reconciliation: LogisticsReconciliation/);
   assert.match(page, /params\.set\("logisticsType", logisticsType\)/);
   assert.match(page, /Reconciliação da base de despacho/);
-  assert.match(page, /Ação PCXpress/);
+  assert.match(page, /Ação BIOWELL/);
   assert.match(page, /sem limitar pela data em que o pedido foi vendido/);
   assert.match(migration, /create or replace view ml_dashboards\.dashboard_logistics_shipment_reconciliation/);
   assert.match(migration, /create or replace view ml_dashboards\.dashboard_daily_logistics_reconciliation_waterfall/);
@@ -252,7 +252,7 @@ test("keeps the operational backlog independent of sale date and Full outside se
   assert.match(operationalBacklogQuery, /measurement_quality: "in\.\(pending,not_applicable\)"/);
   assert.doesNotMatch(operationalBacklogQuery, /\.\.\.logisticsPeriodFilter|\.\.\.reconciliationPeriodFilter/);
   assert.match(page, /const dispatchApplies = logisticsType !== "fulfillment"/);
-  assert.match(page, /Na modalidade Full, despacho do seller não se aplica à PCXpress/);
+  assert.match(page, /Na modalidade Full, despacho do seller não se aplica à BIOWELL/);
   assert.match(migration, /when b\.modality_code = 'full'[\s\S]*then 'excluded_not_applicable_full'/);
   assert.match(check, /where modality_code = 'full'/);
 });

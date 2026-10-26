@@ -22,14 +22,11 @@ const dataFont = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pcxpress-ml-dashboard.vercel.app"),
-  title: "PCXpress | Painel Mercado Livre",
-  description: "Painel comercial e operacional da PCXpress para o Mercado Livre.",
-  icons: { icon: "/pcxpress-logo.webp" },
+  title: "BIOWELL | Painel Mercado Livre",
+  description: "Painel comercial e operacional da BIOWELL para o Mercado Livre.",
   openGraph: {
-    title: "PCXpress | Painel Mercado Livre",
-    description: "Painel comercial e operacional da PCXpress para o Mercado Livre.",
-    images: ["/og.png"],
+    title: "BIOWELL | Painel Mercado Livre",
+    description: "Painel comercial e operacional da BIOWELL para o Mercado Livre.",
   },
 };
 

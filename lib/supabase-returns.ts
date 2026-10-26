@@ -206,7 +206,7 @@ async function getRealReturnsData(window: ReturnsWindow): Promise<ReturnsPayload
 
     try {
       // Todas as devoluções da conta: as em aberto precisam aparecer qualquer que
-      // seja a idade. O volume histórico da PCXpress é de centenas por semestre.
+      // seja a idade. O volume histórico de uma conta é de centenas por semestre.
       devolucoes = await fetchAll<DevolucaoRecord>(
         config,
         appendQuery("devolucoes", {

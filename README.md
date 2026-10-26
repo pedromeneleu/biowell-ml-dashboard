@@ -1,7 +1,16 @@
 [README.md](https://github.com/user-attachments/files/30767329/README.md)
-# PCXpress Mercado Livre Analytics
+# BIOWELL Mercado Livre Analytics
 
 Dashboard Next.js com API server-side para consultar o Supabase sem expor a `service_role` no navegador.
+
+Cópia do painel da PCXpress para a BIOWELL. Usa o mesmo Supabase e as mesmas tabelas
+(`ml_dashboards`): os dados de cada cliente são separados por `account_id`, e este painel lê só a
+conta cujo `account_name` é `SUPABASE_ACCOUNT_NAME` (`BIOWELL`). As migrações em
+`supabase/migrations/` já estão aplicadas no banco compartilhado; não rode de novo.
+
+A BIOWELL usa um app próprio do Mercado Livre (client_id/secret diferentes do app da PCXpress).
+Os workflows do n8n ficam na pasta `ML DASH - BIOWELL` e filtram pelo seller da BIOWELL
+(`target_seller_id`), para nunca renovar o token de uma conta com o app da outra.
 
 ## Estrutura que deve ir ao GitHub
 
@@ -17,8 +26,6 @@ app/
 lib/
   supabase-dashboard.ts
 public/
-  og.png
-  pcxpress-logo.webp
 tests/
   project.test.mjs
 .env.example
@@ -42,7 +49,7 @@ Use estes nomes localmente em `.env.local` e na Vercel:
 SUPABASE_URL=https://SEU-PROJETO.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=SUA_CHAVE_SERVICE_ROLE
 SUPABASE_SCHEMA=ml_dashboards
-SUPABASE_ACCOUNT_NAME=PC Express
+SUPABASE_ACCOUNT_NAME=BIOWELL
 ```
 
 `SUPABASE_SERVICE_ROLE_KEY` é secreta e server-only. Nunca use o prefixo `NEXT_PUBLIC_` nessa variável e nunca envie o valor ao GitHub.

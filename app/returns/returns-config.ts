@@ -50,7 +50,7 @@ export const RETURN_STATUS_TO_STAGE: Record<string, ReturnStage> = {
  * Regras da fila (iguais às da planilha "pcxpress-fila-devolucoes"):
  * - Parado: caso aberto e (a data prevista do ML já passou, ou está sem
  *   atualização do ML há este número de dias ou mais). PROVISÓRIO: 3 dias,
- *   sugerido pela Aruna; definir com a operação da PCXpress.
+ *   sugerido pela Aruna; definir com a operação da BIOWELL.
  * - Prazo do vendedor: "≤ N dias" quando o prazo vence nos próximos N dias.
  */
 export const RETURNS_QUEUE_RULES = {

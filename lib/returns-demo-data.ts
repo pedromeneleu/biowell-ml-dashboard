@@ -3,7 +3,7 @@
  *
  * - Quando aparece: ver resolveDemoMode/shouldShowDemo (app/returns/returns-metrics.ts).
  *   No site oficial, só enquanto não houver devoluções reais.
- * - Nada daqui é gravado no Supabase. Os números não representam a PCXpress.
+ * - Nada daqui é gravado no Supabase. Os números não representam a BIOWELL.
  * - Todos os identificadores começam com "DEMO-". A fila imita o vocabulário
  *   da planilha "pcxpress-fila-devolucoes" (etapas, status, destinos e ações),
  *   sem copiar nenhum caso real.
@@ -332,7 +332,7 @@ export function buildDemoReturnsPayload(window: ReturnsWindow): ReturnsPayload {
 
   return {
     status: "ready",
-    message: "Modo demonstração: dados fictícios, não representam a PCXpress.",
+    message: "Modo demonstração: dados fictícios, não representam a BIOWELL.",
     demo: true,
     generatedAt,
     window,

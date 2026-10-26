@@ -260,8 +260,8 @@ export type SupabaseConfig = {
   accountName: string;
 };
 
-const DEFAULT_ACCOUNT_NAME = "PC Express";
-const DISPLAY_ACCOUNT_NAME = "PCXpress";
+const DEFAULT_ACCOUNT_NAME = "BIOWELL";
+const DISPLAY_ACCOUNT_NAME = "BIOWELL";
 const DEFAULT_SCHEMA = "ml_dashboards";
 const PAGE_SIZE = 1000;
 const REQUEST_TIMEOUT_MS = 15000;

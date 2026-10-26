@@ -497,7 +497,7 @@ export const FALLBACK_DASHBOARD_DATA: DashboardData = {
   source: "fallback",
   connected: false,
   message: "Dados ainda não disponíveis.",
-  accountName: "PCXpress",
+  accountName: "BIOWELL",
   periodDays: 30,
   updatedAt: null,
   catalog: {
