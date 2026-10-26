@@ -262,7 +262,7 @@ export type SupabaseConfig = {
 
 const DEFAULT_ACCOUNT_NAME = "BIOWELL";
 const DISPLAY_ACCOUNT_NAME = "BIOWELL";
-const DEFAULT_SCHEMA = "ml_dashboards";
+const DEFAULT_SCHEMA = "ml_dashboards_biowell";
 const PAGE_SIZE = 1000;
 const REQUEST_TIMEOUT_MS = 15000;
 const PUNCTUALITY_MEASUREMENT_QUALITY = "prospective";

@@ -3,10 +3,13 @@
 
 Dashboard Next.js com API server-side para consultar o Supabase sem expor a `service_role` no navegador.
 
-Cópia do painel da PCXpress para a BIOWELL. Usa o mesmo Supabase e as mesmas tabelas
-(`ml_dashboards`): os dados de cada cliente são separados por `account_id`, e este painel lê só a
-conta cujo `account_name` é `SUPABASE_ACCOUNT_NAME` (`BIOWELL`). As migrações em
-`supabase/migrations/` já estão aplicadas no banco compartilhado; não rode de novo.
+Cópia do painel da PCXpress para a BIOWELL. Usa o mesmo servidor Supabase, mas um schema
+próprio, `ml_dashboards_biowell`, com as mesmas tabelas e views do `ml_dashboards` da PCXpress.
+Os dados das duas contas não se misturam. Dentro do schema, o painel lê a conta cujo
+`account_name` é `SUPABASE_ACCOUNT_NAME` (`BIOWELL`).
+
+Os arquivos em `supabase/migrations/` são o histórico da PCXpress (schema `ml_dashboards`). Para
+o schema da BIOWELL, use os scripts de `supabase/biowell/`.
 
 A BIOWELL usa um app próprio do Mercado Livre (client_id/secret diferentes do app da PCXpress).
 Os workflows do n8n ficam na pasta `ML DASH - BIOWELL` e filtram pelo seller da BIOWELL
@@ -48,7 +51,7 @@ Use estes nomes localmente em `.env.local` e na Vercel:
 ```dotenv
 SUPABASE_URL=https://SEU-PROJETO.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=SUA_CHAVE_SERVICE_ROLE
-SUPABASE_SCHEMA=ml_dashboards
+SUPABASE_SCHEMA=ml_dashboards_biowell
 SUPABASE_ACCOUNT_NAME=BIOWELL
 ```
 
@@ -84,7 +87,7 @@ Não existe `vercel.json` neste projeto de propósito. A detecção nativa do Ne
 
 Se a API retornar `"connected": false`, confira os nomes e os ambientes das variáveis. Se retornar 404, o `Root Directory` da Vercel não aponta para a pasta que contém `package.json` e `app`.
 
-No Supabase, confirme também que `ml_dashboards` está na lista de schemas expostos pela Data API. Sem isso, o endpoint responderá com uma mensagem `PGRST` mesmo que a chave esteja correta.
+No Supabase, confirme também que `ml_dashboards_biowell` está na lista de schemas expostos pela Data API. Sem isso, o endpoint responderá com uma mensagem `PGRST` mesmo que a chave esteja correta.
 
 ## Definições das métricas
 
@@ -99,9 +102,9 @@ Ao passar o mouse pelo gráfico, o tooltip mostra o valor do dia, o valor do dia
 
 ## Views consumidas
 
-- `ml_dashboards.dashboard_item_catalog`
-- `ml_dashboards.dashboard_daily_account_summary`
-- `ml_dashboards.dashboard_daily_item_performance`
+- `ml_dashboards_biowell.dashboard_item_catalog`
+- `ml_dashboards_biowell.dashboard_daily_account_summary`
+- `ml_dashboards_biowell.dashboard_daily_item_performance`
 
 ## Documentação do dashboard
 

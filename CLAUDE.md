@@ -30,7 +30,7 @@ Local env vars go in `.env.local` (not committed):
 ```dotenv
 SUPABASE_URL=https://SEU-PROJETO.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=SUA_CHAVE_SERVICE_ROLE
-SUPABASE_SCHEMA=ml_dashboards
+SUPABASE_SCHEMA=ml_dashboards_biowell
 SUPABASE_ACCOUNT_NAME=BIOWELL
 ```
 
@@ -49,13 +49,13 @@ client renders. The service-role key never reaches the browser — it's read onl
 
 **No ORM/SDK for Supabase.** `supabaseFetch()` hits `${SUPABASE_URL}/rest/v1/<path>` with
 `apikey`/`authorization` headers and `accept-profile`/`content-profile: SUPABASE_SCHEMA` headers
-(defaults to schema `ml_dashboards`) to select the exposed Postgres schema. `fetchAll()` paginates
+(defaults to schema `ml_dashboards_biowell`, BIOWELL's own copy of the PCXpress `ml_dashboards` schema) to select the exposed Postgres schema. `fetchAll()` paginates
 with the PostgREST `range` header in pages of 1000. `optionalFetchAll()` swallows errors for views
 that may not exist yet in a given environment (e.g. Seller-health views), returning `[]` instead of
 failing the whole request — new views should probably follow this pattern until they're guaranteed
 present in production.
 
-**Views consumed from Supabase** (all under the `ml_dashboards` schema): `accounts`,
+**Views consumed from Supabase** (all under the `ml_dashboards_biowell` schema): `accounts`,
 `dashboard_item_catalog`, `dashboard_daily_account_summary`, `dashboard_daily_item_performance`,
 `sellers_current`, `seller_daily_snapshots`, `dashboard_daily_order_impact`. Row shapes (snake_case,
 matching Postgres) are declared as private `*Record` types in `lib/supabase-dashboard.ts` and mapped

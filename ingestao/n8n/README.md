@@ -1,7 +1,7 @@
 # Ingestão de devoluções (n8n)
 
 `MVP7_Devolucoes.json` é o workflow do n8n que alimenta a seção **Devoluções** do painel.
-Ele grava em `ml_dashboards.devolucoes`, `devolucoes_status` e `devolucoes_motivos`
+Na BIOWELL, ele grava no schema `ml_dashboards_biowell` (campo `schema` do CONFIG): `devolucoes`, `devolucoes_status` e `devolucoes_motivos`
 (criadas por `supabase/migrations/2026-10-05_devolucoes.sql`), preenche as colunas da fila do
 Acompanhamento (`supabase/migrations/2026-10-08_devolucoes_fila.sql`) e anota as reclamações já
 conferidas sem devolução em `devolucoes_claims_sem_devolucao`
