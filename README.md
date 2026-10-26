@@ -11,9 +11,11 @@ Os dados das duas contas não se misturam. Dentro do schema, o painel lê a cont
 Os arquivos em `supabase/migrations/` são o histórico da PCXpress (schema `ml_dashboards`). Para
 o schema da BIOWELL, use os scripts de `supabase/biowell/`.
 
-A BIOWELL usa um app próprio do Mercado Livre (client_id/secret diferentes do app da PCXpress).
-Os workflows do n8n ficam na pasta `ML DASH - BIOWELL` e filtram pelo seller da BIOWELL
-(`target_seller_id`), para nunca renovar o token de uma conta com o app da outra.
+A BIOWELL usa o mesmo app do Mercado Livre da PCXpress (Aruna Test API) e é o seller
+`3034897966`. Os workflows do n8n ficam na pasta `ML DASH - BIOWELL`, gravam no schema
+`ml_dashboards_biowell` e filtram por esse seller (`target_seller_id`). O refresh token da
+BIOWELL fica em `ml_dashboards_biowell.oauth_tokens` e só o n8n deve renová-lo: no Mercado
+Livre, cada renovação invalida o refresh token anterior.
 
 ## Estrutura que deve ir ao GitHub
 
