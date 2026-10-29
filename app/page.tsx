@@ -1,7 +1,6 @@
   "use client";
   
-  import Image from "next/image";
-  import {
+    import {
     Activity,
     AlertTriangle,
     ArrowDownRight,
@@ -2807,9 +2806,7 @@
       <main className="dashboard-shell">
         <aside className={`sidebar ${mobileOpen ? "sidebar-open" : ""}`}>
           <div className="brand-block">
-            <div className="brand-logo">
-              <Image src="/fdc-logo.png" alt="FDC" width={360} height={265} priority />
-            </div>
+            <strong className="brand-wordmark">BIOWELL</strong>
             <span>Painel Mercado Livre</span>
           </div>
           <nav aria-label="Navegação principal">

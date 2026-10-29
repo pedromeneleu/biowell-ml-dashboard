@@ -44,9 +44,7 @@ button { letter-spacing: 0; }
   border-right: 1px solid #1b2023;
 }
 .brand-block { height: 112px; padding: 20px 22px 14px; border-bottom: 1px solid #1b2023; }
-.brand-logo { display: inline-flex; padding: 5px 10px; border-radius: 8px; background: #f6f1ea; }
-.brand-logo img { width: auto; height: 46px; }
-.brand-block .brand-logo + span { margin-top: 8px; }
+.brand-wordmark { display: block; color: #f3f6f7; font-family: var(--font-display), sans-serif; font-size: 30px; line-height: 52px; font-weight: 800; letter-spacing: 0.04em; }
 .brand-block span { display: block; margin-top: -6px; color: #7f8b91; font-size: 10px; text-transform: uppercase; font-weight: 700; }
 .sidebar nav { padding: 18px 12px; flex: 1; }
 .nav-section-label { margin: 0 12px 8px; color: #6f7a80; font-size: 10px; text-transform: uppercase; font-weight: 800; }
